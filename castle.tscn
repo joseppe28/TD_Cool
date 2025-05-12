@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bad5fs1q3rxce"]
+
+[ext_resource type="Script" uid="uid://dpeokq02316s6" path="res://castle.gd" id="1_vm22h"]
+[ext_resource type="PackedScene" uid="uid://wstast0me6li" path="res://Tower.blend" id="1_xtwgx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vm22h"]
+size = Vector3(1, 6.09167, 9.21265)
+
+[node name="Castle" type="Area3D"]
+collision_mask = 3
+script = ExtResource("1_vm22h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54584, 3.6637)
+shape = SubResource("BoxShape3D_vm22h")
+
+[node name="Tower" parent="." instance=ExtResource("1_xtwgx")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

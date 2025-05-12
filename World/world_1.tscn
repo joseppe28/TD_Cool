@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://djypvwghe2oyc"]
+
+[ext_resource type="PackedScene" uid="uid://ooyqp1m5dyl5" path="res://Enemy/enemy.tscn" id="1_nkc3q"]
+[ext_resource type="PackedScene" uid="uid://bad5fs1q3rxce" path="res://castle.tscn" id="2_cvrok"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_km8t6"]
+
+[sub_resource type="Curve3D" id="Curve3D_nkc3q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 5, 0, 0, -1.08423, 0, -1.50246, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.615566, 0.0113151, 0.0261595, 0, 0, 0, 0, 0, 0, -1.5924, 0.0333016, 0.0412802),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="World1" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_km8t6")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000682384, 0, 0)
+curve = SubResource("Curve3D_nkc3q")
+
+[node name="enemy" parent="Path3D" instance=ExtResource("1_nkc3q")]
+transform = Transform3D(-4.37114e-09, 0, -0.0999999, 0, 0.1, 0, 0.0999999, 0, -4.37114e-09, -1.08423, 0, -1.50246)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.10513, 2.95274, -0.574447)
+fov = 73.125
+
+[node name="Castle" parent="." instance=ExtResource("2_cvrok")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.73387, 0, -0.841016)
+health = 1

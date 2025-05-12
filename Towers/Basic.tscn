@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3xqfm05pvca2"]
+
+[ext_resource type="PackedScene" uid="uid://wstast0me6li" path="res://Tower.blend" id="1_fs08c"]
+[ext_resource type="Script" uid="uid://dpm0j6olnn1t0" path="res://Towers/defense.gd" id="1_ikydf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fs08c"]
+size = Vector3(5.63452, 20.3124, 31.3973)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ikydf"]
+radius = 33.7205
+
+[node name="Tower_Basic" type="Area3D"]
+script = ExtResource("1_ikydf")
+
+[node name="Tower" parent="." instance=ExtResource("1_fs08c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599243, 9.65619, 12.9036)
+shape = SubResource("BoxShape3D_fs08c")
+
+[node name="Range" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+shape = SubResource("SphereShape3D_ikydf")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
