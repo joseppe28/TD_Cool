@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000682384, 0, 0)
 curve = SubResource("Curve3D_nkc3q")
 
 [node name="enemy" parent="Path3D" instance=ExtResource("1_nkc3q")]
-transform = Transform3D(-4.37114e-09, 0, -0.0999999, 0, 0.1, 0, 0.0999999, 0, -4.37114e-09, -1.08423, 0, -1.50246)
+transform = Transform3D(-4.37113e-09, 0, -0.0999999, 0, 0.1, 0, 0.0999999, 0, -4.37113e-09, -1.08423, 0, -1.50246)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.10513, 2.95274, -0.574447)
