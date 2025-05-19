@@ -7,7 +7,7 @@
 size = Vector3(5.63452, 20.3124, 31.3973)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ikydf"]
-radius = 33.7205
+radius = 106.965
 
 [node name="Tower_Basic" type="Area3D"]
 script = ExtResource("1_ikydf")
@@ -19,10 +19,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599243, 9.65619, 12.9036)
 shape = SubResource("BoxShape3D_fs08c")
 
 [node name="Range" type="Area3D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544014, -0.126392, 0.0658875)
 shape = SubResource("SphereShape3D_ikydf")
 
 [node name="Timer" type="Timer" parent="."]

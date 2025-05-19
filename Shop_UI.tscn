@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr57y58mffaec"]
+
+[ext_resource type="Script" uid="uid://b7m5ayrcrukgk" path="res://shop_ui.gd" id="1_u7nhu"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7nhu")
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 1
+item_0/text = "Basic"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 994.0
+offset_top = 583.0
+offset_right = 1063.0
+offset_bottom = 630.0
+text = "Buy"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 592.0
+offset_right = 1076.0
+offset_bottom = 623.0
+text = "Open Shop"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
