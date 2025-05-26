@@ -16,5 +16,4 @@ func _on_timer_timeout() -> void:
 func damage(d):
 	health -= d
 	if health <= 0:
-		get_tree().current_scene.remove_enemy()
 		queue_free()

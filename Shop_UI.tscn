@@ -34,14 +34,6 @@ offset_right = 1063.0
 offset_bottom = 630.0
 text = "Buy"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 185.0
-offset_bottom = 36.0
-text = "Money: "
-
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 983.0

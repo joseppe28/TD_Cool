@@ -19,9 +19,6 @@ func get_target():
 
 
 func _on_timer_timeout() -> void:
-	if not active:
-		$Timer.start()
-		return
 	var e = get_target()
 	if e == null or not e.is_in_group("Enemy"):
 		$Timer.start()
