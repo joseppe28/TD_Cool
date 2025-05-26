@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dbpfrv33hagsy"
-path="res://.godot/imported/Bogenturm.blend-67353bcb9a31c318c810298b04ad0b36.scn"
+path="res://.godot/imported/Bogenturm.blend-a19af16a4294b18a9c7a58da0924f61a.scn"
 
 [deps]
 
-source_file="res://Bogenturm.blend"
-dest_files=["res://.godot/imported/Bogenturm.blend-67353bcb9a31c318c810298b04ad0b36.scn"]
+source_file="res://Towers/Bogenturm.blend"
+dest_files=["res://.godot/imported/Bogenturm.blend-a19af16a4294b18a9c7a58da0924f61a.scn"]
 
 [params]
 

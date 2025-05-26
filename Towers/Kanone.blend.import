@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ceo07qm8mlwhe"
-path="res://.godot/imported/Mörser.blend-8317c3c474302150adb0b5815c4afe53.scn"
+uid="uid://dpycht64ong7u"
+path="res://.godot/imported/Kanone.blend-de88cb1eeac890a0e0b9062d4a95c1da.scn"
 
 [deps]
 
-source_file="res://Mörser.blend"
-dest_files=["res://.godot/imported/Mörser.blend-8317c3c474302150adb0b5815c4afe53.scn"]
+source_file="res://Towers/Kanone.blend"
+dest_files=["res://.godot/imported/Kanone.blend-de88cb1eeac890a0e0b9062d4a95c1da.scn"]
 
 [params]
 
