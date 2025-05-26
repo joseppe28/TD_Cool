@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://djypvwghe2oyc"]
+[gd_scene load_steps=11 format=3 uid="uid://djypvwghe2oyc"]
 
-[ext_resource type="Script" path="res://World/world.gd" id="1_17eat"]
+[ext_resource type="Script" uid="uid://cny4my36tw411" path="res://World/world.gd" id="1_17eat"]
 [ext_resource type="PackedScene" uid="uid://ooyqp1m5dyl5" path="res://Enemy/enemy.tscn" id="1_nkc3q"]
 [ext_resource type="PackedScene" uid="uid://bad5fs1q3rxce" path="res://castle.tscn" id="2_cvrok"]
 [ext_resource type="PackedScene" uid="uid://b3xqfm05pvca2" path="res://Towers/Basic.tscn" id="3_f14ig"]
-[ext_resource type="PackedScene" path="res://Shop_UI.tscn" id="4_kswsu"]
-[ext_resource type="PackedScene" uid="uid://dpycht64ong7u" path="res://Kanone.blend" id="6_actxm"]
-[ext_resource type="PackedScene" uid="uid://ceo07qm8mlwhe" path="res://Mörser.blend" id="7_lvayf"]
+[ext_resource type="PackedScene" uid="uid://cr57y58mffaec" path="res://Shop_UI.tscn" id="4_kswsu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_17eat"]
 sky_top_color = Color(0.0496819, 0.503847, 0.574023, 1)
@@ -62,9 +60,3 @@ health = 1
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 1.79543, 0.085283, -1.03503)
 
 [node name="Control" parent="." instance=ExtResource("4_kswsu")]
-
-[node name="Kanone" parent="." instance=ExtResource("6_actxm")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.347274, 0, -0.0941637)
-
-[node name="Mörser" parent="." instance=ExtResource("7_lvayf")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.264755, 0, 0.267031)
