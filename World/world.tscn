@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7va1fphk580i"]
+
+[ext_resource type="Script" uid="uid://cny4my36tw411" path="res://World/world.gd" id="1_8a836"]
+[ext_resource type="PackedScene" uid="uid://bad5fs1q3rxce" path="res://castle.tscn" id="1_62w18"]
+[ext_resource type="PackedScene" uid="uid://cr57y58mffaec" path="res://Shop_UI.tscn" id="3_j8job"]
+
+[sub_resource type="Curve3D" id="Curve3D_62w18"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.62678, 0, -0.0697069, 0, 0, 0, 0, 0, 0, 5.73789, 0, 1.24476, 0, 0, 0, 0, 0, 0, 5.73789, 0, 2.93764, 0, 0, 0, 0, 0, 0, 4.8815, 0, 3.8737, 0, 0, 0, 0, 0, 0, 3.88569, 0, 4.31186, 0, 0, 0, 0, 0, 0, 3.18862, 0, 4.31186, 0, 0, 0, 0, 0, 0, 2.49155, 0, 4.25211, 0, 0, 0, 0, 0, 0, 1.89407, 0, 3.85379, 0, 0, 0, 0, 0, 0, 1.83432, 0, 3.05714, 0, 0, 0, 0, 0, 0, 1.83432, 0, 2.02149, 0, 0, 0, 0, 0, 0, 1.8144, 0, 1.1651, 0, 0, 0, 0, 0, 0, 1.41608, 0, 0.308702, 0, 0, 0, 0, 0, 0, 0.858425, 0, 0.248953, 0, 0, 0, 0, 0, 0, 0.30077, 0, 0.408282, 0, 0, 0, 0, 0, 0, 0.00202751, 0, 1.18501, 0, 0, 0, 0, 0, 0, 0.0617752, 0, 1.72275, 0, 0, 0, 0, 0, 0, 0.101608, 0, 2.85798, 0, 0, 0, 0, 0, 0, 0.0219421, 0, 3.65462, 0, 0, 0, 0, 0, 0, -0.515793, 0, 4.17244, 0, 0, 0, 0, 0, 0, -1.1332, 0, 3.7542, 0, 0, 0, 0, 0, 0, -1.43194, 0, 2.89781, 0, 0, 0, 0, 0, 0, -1.6311, 0, 1.98166, 0, 0, 0, 0, 0, 0, -1.83026, 0, 1.08543, 0, 0, 0, 0, 0, 0, -2.06926, 0, 0.468031, 0, 0, 0, 0, 0, 0, -2.34809, 0, 0.487947, 0, 0, 0, 0, 0, 0, -2.46758, 0, 0.647276, 0, 0, 0, 0, 0, 0, -2.90574, 0, 0.826523, 0, 0, 0, 0, 0, 0, -3.1049, 0, 0.846439),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 28
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_8a836")
+
+[node name="Castle" parent="." instance=ExtResource("1_62w18")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2244, 0, 0)
+curve = SubResource("Curve3D_62w18")
+
+[node name="Enemy_Spawner" type="Timer" parent="."]
+one_shot = true
+
+[node name="Wave_wait" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.20764, 6.53572, 1.18452)
+
+[node name="Size_Control" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7741, 0, 4.09985)
+
+[node name="Control" parent="." instance=ExtResource("3_j8job")]
+
+[connection signal="timeout" from="Enemy_Spawner" to="." method="_on_enemy_spawner_timeout"]
+[connection signal="timeout" from="Wave_wait" to="." method="_on_wave_wait_timeout"]
