@@ -31,7 +31,11 @@ point_count = 4
 
 [node name="World1" type="Node3D"]
 process_mode = 3
+<<<<<<< HEAD
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92763, 0, 1.50771)
+=======
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91406, 0, 1.51013)
+>>>>>>> b41ae3118b12eb47f587623572e5017caec73781
 script = ExtResource("1_17eat")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -49,8 +53,13 @@ transform = Transform3D(-4.37113e-09, 0, -0.0999999, 0, 0.1, 0, 0.0999999, 0, -4
 speed = 1.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
+<<<<<<< HEAD
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.120474, 2.95274, -0.395898)
+fov = 73.125
+=======
 transform = Transform3D(0.999699, -1.0733e-09, 0.0245543, -0.0245543, -4.36982e-08, 0.999699, -8.633e-16, -1, -4.37114e-08, 1.62349, 14.2439, 0.820327)
 fov = 15.5
+>>>>>>> b41ae3118b12eb47f587623572e5017caec73781
 
 [node name="Castle" parent="." instance=ExtResource("2_cvrok")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.73387, 0, -0.841016)
@@ -60,3 +69,17 @@ health = 1
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 1.79543, 0.085283, -1.03503)
 
 [node name="Control" parent="." instance=ExtResource("4_kswsu")]
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+[node name="Size_Control" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07568, 0, 0.971201)
+=======
+[node name="Kanone" parent="." instance=ExtResource("6_actxm")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.347274, 0, -0.0941637)
+
+[node name="Mörser" parent="." instance=ExtResource("7_lvayf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.264755, 0, 0.267031)
+>>>>>>> b41ae3118b12eb47f587623572e5017caec73781
+>>>>>>> 6ad3fa4b1e7410d8c62243e58739c2ca29c2ca2f
