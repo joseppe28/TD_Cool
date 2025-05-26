@@ -4,6 +4,7 @@ var tower_placement = null
 var wave = 1
 var spawn_enemies = 0
 var enemy_count = 0
+var money = 100
 
 func _ready() -> void:
 	wave_generation()
@@ -42,6 +43,10 @@ func wave_generation():
 func buy(t):
 	var tower = load("res://Towers/" + t + ".tscn")
 	tower = tower.instantiate()
+	if tower.cost > money: 
+		return 
+	else:
+		money -= tower.cost
 	tower.scale = Vector3(0.02, 0.02, 0.02)
 	get_parent().add_child(tower)
 	tower.global_position = Vector3(0, 0, 0)
@@ -61,6 +66,7 @@ func _on_enemy_spawner_timeout() -> void:
 		$Enemy_Spawner.start()
 
 func remove_enemy():
+	money += 10
 	enemy_count -= 1
 
 func _on_wave_wait_timeout() -> void:
