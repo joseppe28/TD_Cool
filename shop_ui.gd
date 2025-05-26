@@ -1,6 +1,8 @@
 extends Control
 
 
+func _physics_process(delta: float) -> void:
+	$Label.text = "Money: " + str(get_tree().current_scene.money)
 
 
 func _on_button_pressed() -> void:
