@@ -25,3 +25,12 @@ func _on_button_2_pressed() -> void:
 	$Button.visible = true
 	$Button2.visible = false
 	
+
+
+func _on_next_wave_pressed() -> void:
+	if get_tree().current_scene.enemy_count <= 0:
+		get_tree().current_scene.next_wave()
+
+
+func _on_auto_load_pressed() -> void:
+	get_tree().current_scene.auto_load = !get_tree().current_scene.auto_load

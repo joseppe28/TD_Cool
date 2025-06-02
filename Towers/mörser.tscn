@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsxen64acp5y4"]
+
+[ext_resource type="Script" uid="uid://dpm0j6olnn1t0" path="res://Towers/defense.gd" id="1_eiiir"]
+[ext_resource type="PackedScene" uid="uid://ceo07qm8mlwhe" path="res://Towers/Mörser.blend" id="1_qt08u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eiiir"]
+size = Vector3(0.887634, 0.51123, 0.843262)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qt08u"]
+radius = 3.0
+
+[node name="Mörser" type="Area3D"]
+script = ExtResource("1_eiiir")
+damage = 20
+speed = 1.0
+cost = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00741577, 0.244385, -0.0012207)
+shape = SubResource("BoxShape3D_eiiir")
+
+[node name="Mörser" parent="." instance=ExtResource("1_qt08u")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Range" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+shape = SubResource("SphereShape3D_qt08u")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

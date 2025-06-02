@@ -6,6 +6,8 @@ var spawn_enemies = 0
 var enemy_count = 0
 var money = 100
 
+var auto_load = false
+
 func _ready() -> void:
 	wave_generation()
 
@@ -31,9 +33,8 @@ func _physics_process(delta: float) -> void:
 			tower_placement.active = true
 			tower_placement = null
 	if enemy_count <= 0 and spawn_enemies <= 0 and $Wave_wait.is_stopped():
-		print("Test")
-		wave += 1
-		$Wave_wait.start()
+		if auto_load:
+			$Wave_wait.start()
 
 func wave_generation():
 	spawn_enemies = int(10 + (wave * 5 * wave/2))
@@ -57,7 +58,7 @@ func _on_enemy_spawner_timeout() -> void:
 	e = e.instantiate()
 	e.scale = Vector3(0.2, 0.2, 0.2)
 	$Path3D.add_child(e)
-	e.global_position = $Path3D.global_position
+	e.global_position = Vector3(10000,0,10000)
 	enemy_count += 1
 	spawn_enemies -= 1
 	if(not spawn_enemies <= 0): 
@@ -67,5 +68,12 @@ func remove_enemy():
 	money += 10
 	enemy_count -= 1
 
+func next_wave():
+	wave += 1
+	wave_generation()
+
 func _on_wave_wait_timeout() -> void:
+	if auto_load == false:
+		return
+	wave += 1
 	wave_generation()

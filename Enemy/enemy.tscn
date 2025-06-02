@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ooyqp1m5dyl5"]
+[gd_scene load_steps=4 format=3 uid="uid://ooyqp1m5dyl5"]
 
 [ext_resource type="Script" uid="uid://cjw310faxqrdo" path="res://Enemy/enemy.gd" id="1_2pb1h"]
+[ext_resource type="PackedScene" uid="uid://delfw1dlrgisx" path="res://Enemy/Ballon.blend" id="2_px1sc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xjnqo"]
 radius = 2.84772
@@ -19,5 +20,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Ballon" parent="." instance=ExtResource("2_px1sc")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -22,8 +22,9 @@ anchor_bottom = 1.0
 offset_left = -257.0
 grow_horizontal = 0
 grow_vertical = 2
-item_count = 1
+item_count = 2
 item_0/text = "Basic"
+item_1/text = "Mörser"
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -50,5 +51,23 @@ offset_right = 1076.0
 offset_bottom = 623.0
 text = "Open Shop"
 
+[node name="Next_Wave" type="Button" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 12.0
+offset_right = 801.0
+offset_bottom = 43.0
+text = ">"
+
+[node name="Auto_Load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 13.0
+offset_right = 851.0
+offset_bottom = 44.0
+text = ">>"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Next_Wave" to="." method="_on_next_wave_pressed"]
+[connection signal="pressed" from="Auto_Load" to="." method="_on_auto_load_pressed"]
