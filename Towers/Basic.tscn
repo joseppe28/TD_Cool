@@ -1,21 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3xqfm05pvca2"]
 
-[ext_resource type="PackedScene" uid="uid://wstast0me6li" path="res://Tower.blend" id="1_fs08c"]
 [ext_resource type="Script" uid="uid://dpm0j6olnn1t0" path="res://Towers/defense.gd" id="1_ikydf"]
+[ext_resource type="PackedScene" uid="uid://dpycht64ong7u" path="res://Towers/Kanone.blend" id="2_ikydf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fs08c"]
-size = Vector3(5.63452, 20.3124, 31.3973)
+size = Vector3(1.21991, 1.18259, 1.11216)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ikydf"]
-radius = 106.965
+radius = 2.35774
 
 [node name="Tower_Basic" type="Area3D"]
 script = ExtResource("1_ikydf")
 
-[node name="Tower" parent="." instance=ExtResource("1_fs08c")]
+[node name="Kanone" parent="." instance=ExtResource("2_ikydf")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599243, 9.65619, 12.9036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141327, 0.0912857, -0.0214801)
 shape = SubResource("BoxShape3D_fs08c")
 
 [node name="Range" type="Area3D" parent="."]
@@ -23,7 +24,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544014, -0.126392, 0.0658875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214961, -0.126392, 0.0658875)
 shape = SubResource("SphereShape3D_ikydf")
 
 [node name="Timer" type="Timer" parent="."]

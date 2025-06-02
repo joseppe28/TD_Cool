@@ -27,8 +27,7 @@ func _physics_process(delta: float) -> void:
 		tower_placement.position.z = procent_y * sy
 		tower_placement.position.y = 0
 		
-		
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if Input.is_action_just_pressed("mouse_left"):
 			tower_placement.active = true
 			tower_placement = null
 	if enemy_count <= 0 and spawn_enemies <= 0 and $Wave_wait.is_stopped():
@@ -47,7 +46,6 @@ func buy(t):
 		return 
 	else:
 		money -= tower.cost
-	tower.scale = Vector3(0.02, 0.02, 0.02)
 	get_parent().add_child(tower)
 	tower.global_position = Vector3(0, 0, 0)
 	tower_placement = tower

@@ -14,7 +14,8 @@ func _ready() -> void:
 
 func get_target():
 	for e in range.get_overlapping_areas():
-		return e
+		if e.is_in_group("Enemy"):
+			return e
 	return null
 
 
@@ -23,7 +24,7 @@ func _on_timer_timeout() -> void:
 		$Timer.start()
 		return
 	var e = get_target()
-	if e == null or not e.is_in_group("Enemy"):
+	if e == null:
 		$Timer.start()
 		return
 	e = e.get_parent()

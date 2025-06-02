@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7va1fphk580i"]
+[gd_scene load_steps=8 format=3 uid="uid://c7va1fphk580i"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_8a836"]
 [ext_resource type="PackedScene" uid="uid://bad5fs1q3rxce" path="res://castle.tscn" id="1_62w18"]
 [ext_resource type="PackedScene" uid="uid://cr57y58mffaec" path="res://Shop_UI.tscn" id="3_j8job"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8job"]
+sky_top_color = Color(0.0235294, 0.631373, 0.831373, 1)
+sky_horizon_color = Color(0.828917, 1.05637, 1.01421, 1)
+ground_bottom_color = Color(0.2, 0.501961, 0.133333, 1)
+ground_horizon_color = Color(0.828917, 1.05637, 1.01421, 1)
+
+[sub_resource type="Sky" id="Sky_3f78f"]
+sky_material = SubResource("ProceduralSkyMaterial_j8job")
+
+[sub_resource type="Environment" id="Environment_k8do8"]
+background_mode = 2
+sky = SubResource("Sky_3f78f")
+tonemap_mode = 2
+
 [sub_resource type="Curve3D" id="Curve3D_62w18"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.62678, 0, -0.0697069, 0, 0, 0, 0, 0, 0, 5.73789, 0, 1.24476, 0, 0, 0, 0, 0, 0, 5.73789, 0, 2.93764, 0, 0, 0, 0, 0, 0, 4.8815, 0, 3.8737, 0, 0, 0, 0, 0, 0, 3.88569, 0, 4.31186, 0, 0, 0, 0, 0, 0, 3.18862, 0, 4.31186, 0, 0, 0, 0, 0, 0, 2.49155, 0, 4.25211, 0, 0, 0, 0, 0, 0, 1.89407, 0, 3.85379, 0, 0, 0, 0, 0, 0, 1.83432, 0, 3.05714, 0, 0, 0, 0, 0, 0, 1.83432, 0, 2.02149, 0, 0, 0, 0, 0, 0, 1.8144, 0, 1.1651, 0, 0, 0, 0, 0, 0, 1.41608, 0, 0.308702, 0, 0, 0, 0, 0, 0, 0.858425, 0, 0.248953, 0, 0, 0, 0, 0, 0, 0.30077, 0, 0.408282, 0, 0, 0, 0, 0, 0, 0.00202751, 0, 1.18501, 0, 0, 0, 0, 0, 0, 0.0617752, 0, 1.72275, 0, 0, 0, 0, 0, 0, 0.101608, 0, 2.85798, 0, 0, 0, 0, 0, 0, 0.0219421, 0, 3.65462, 0, 0, 0, 0, 0, 0, -0.515793, 0, 4.17244, 0, 0, 0, 0, 0, 0, -1.1332, 0, 3.7542, 0, 0, 0, 0, 0, 0, -1.43194, 0, 2.89781, 0, 0, 0, 0, 0, 0, -1.6311, 0, 1.98166, 0, 0, 0, 0, 0, 0, -1.83026, 0, 1.08543, 0, 0, 0, 0, 0, 0, -2.06926, 0, 0.468031, 0, 0, 0, 0, 0, 0, -2.34809, 0, 0.487947, 0, 0, 0, 0, 0, 0, -2.46758, 0, 0.647276, 0, 0, 0, 0, 0, 0, -2.90574, 0, 0.826523, 0, 0, 0, 0, 0, 0, -3.1049, 0, 0.846439),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.23897, 0, -2.6225, 0, 0, 0, 0, 0, 0, 5.73789, 0, 1.24476, 0, 0, 0, 0, 0, 0, 5.36283, 0, 2.93764, 0, 0, 0, 0, 0, 0, 4.8815, 0, 3.8737, 0, 0, 0, 0, 0, 0, 3.88569, 0, 4.31186, 0, 0, 0, 0, 0, 0, 3.18862, 0, 4.31186, 0, 0, 0, 0, 0, 0, 2.49155, 0, 4.25211, 0, 0, 0, 0, 0, 0, 1.89407, 0, 3.85379, 0, 0, 0, 0, 0, 0, 1.83432, 0, 3.05714, 0, 0, 0, 0, 0, 0, 1.83432, 0, 2.02149, 0, 0, 0, 0, 0, 0, 1.8144, 0, 1.1651, 0, 0, 0, 0, 0, 0, 1.41608, 0, 0.308702, 0, 0, 0, 0, 0, 0, 0.858425, 0, 0.248953, 0, 0, 0, 0, 0, 0, 0.30077, 0, 0.408282, 0, 0, 0, 0, 0, 0, 0.00202751, 0, 1.18501, 0, 0, 0, 0, 0, 0, 0.0617752, 0, 1.72275, 0, 0, 0, 0, 0, 0, 0.101608, 0, 2.85798, 0, 0, 0, 0, 0, 0, 0.0219421, 0, 3.65462, 0, 0, 0, 0, 0, 0, -0.515793, 0, 4.17244, 0, 0, 0, 0, 0, 0, -1.1332, 0, 3.7542, 0, 0, 0, 0, 0, 0, -1.43194, 0, 2.89781, 0, 0, 0, 0, 0, 0, -1.6311, 0, 1.98166, 0, 0, 0, 0, 0, 0, -1.83026, 0, 1.08543, 0, 0, 0, 0, 0, 0, -2.06926, 0, 0.468031, 0, 0, 0, 0, 0, 0, -2.34809, 0, 0.487947, 0, 0, 0, 0, 0, 0, -2.46758, 0, 0.647276, 0, 0, 0, 0, 0, 0, -2.90574, 0, 0.826523, 0, 0, 0, 0, 0, 0, -3.1049, 0, 0.846439),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 28
@@ -14,8 +28,17 @@ point_count = 28
 [node name="World" type="Node3D"]
 script = ExtResource("1_8a836")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k8do8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(1, 0.788235, 0.211765, 1)
+shadow_enabled = true
+
 [node name="Castle" parent="." instance=ExtResource("1_62w18")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+health = 100000
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2244, 0, 0)
@@ -33,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.307,
 fov = 10.5
 
 [node name="Size_Control" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3887, 0, 7.94682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9553, -5.72205e-06, 7.06446)
 
 [node name="Control" parent="." instance=ExtResource("3_j8job")]
 
