@@ -38,6 +38,11 @@ func _physics_process(delta: float) -> void:
 
 func wave_generation():
 	spawn_enemies = int(10 + (wave * 5 * wave/2))
+	var wait = 2- (wave * 0.1)
+	if wait <= 0.1:
+		wait = 0.1
+	$Enemy_Spawner.wait_time = wait
+	
 	$Enemy_Spawner.start()
 
 func buy(t):
@@ -57,6 +62,9 @@ func _on_enemy_spawner_timeout() -> void:
 	var e = preload("res://Enemy/enemy.tscn")
 	e = e.instantiate()
 	e.scale = Vector3(0.2, 0.2, 0.2)
+	e.speed = e.speed + ( wave * 0.5)
+	e.attack_damage = e.attack_damage + (wave * 0.5)
+	e.health = e.health + (wave * 0.5)
 	$Path3D.add_child(e)
 	e.global_position = Vector3(10000,0,10000)
 	enemy_count += 1
