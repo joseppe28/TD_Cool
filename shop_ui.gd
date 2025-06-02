@@ -3,6 +3,7 @@ extends Control
 
 func _physics_process(delta: float) -> void:
 	$Label.text = "Money: " + str(get_tree().current_scene.money)
+	$Label2.text = "Round: " + str(get_tree().current_scene.wave)
 
 
 func _on_button_pressed() -> void:
